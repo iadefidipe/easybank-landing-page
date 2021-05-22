@@ -47,6 +47,18 @@ img{
     display: block;
 }
 
+//button styling
+
+button,.button{
+    padding:  0.875rem 2.1875rem;
+    border-radius: 50px;
+    cursor: pointer;
+    background: linear-gradient(to right, $clr-limeGreen, $clr-brightCyan);
+    border: 0;
+    color: $clr-white;
+    font-weight: 400;
+}
+
 //visibility
 .hide-for-mobile{
     @include breakpoint-down(medium){
@@ -109,7 +121,7 @@ img{
             position: relative;
             font-size: $font-sm;
             font-weight: 400;
-            animation: color 300ms ease-in-out;
+            transition: color 300ms ease-in-out;
 
             &:not(:last-child){
                 margin-right: rem(20);
@@ -126,6 +138,7 @@ img{
                 height: rem(5);
                 margin-top: rem(25);
                 opacity: 0;
+                transition: opacity 300ms ease-in-out;
 
             }
             &:hover{
@@ -137,5 +150,12 @@ img{
             }
         }
         
+    }
+
+    &__cta{
+        &:hover{
+            opacity: 0.7;
+            transition: opacity 300ms ease-in-out;
+        }
     }
 }
