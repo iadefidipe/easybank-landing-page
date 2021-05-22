@@ -1,0 +1,21 @@
+//colors
+$clr-darkBlue:hsl(233, 26%, 24%);
+$clr-limeGreen:hsl(136, 65%, 51%);
+$clr-brightCyan:hsl(192, 70%, 51%);
+//neutral
+$clr-grayishBlue:hsl(233, 8%, 62%);
+$clr-lightGrayishBlue: hsl(220, 16%, 96%);
+$clr-veryLightGray: hsl(0, 0%, 98%);
+$clr-white: hsl(0, 0%, 100%);
+
+//fontsize
+$font-sm:0.875rem; //14px
+$font-med: 1.125rem; //18px
+$font-med: 1.125rem; //18px
+
+// ===============  take in pixels, spit out rem value (just for fun)
+
+@function rem($size) {
+    $remSize: $size / 16;
+    @return #{$remSize}rem;
+}

@@ -1,1 +1,58 @@
 @import "variables";
+@import "mixins";
+
+
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after{
+    margin:0 ;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    font-family: 'Rubik', sans-serif;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    margin:  0 auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+
+img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+//visibility
+.hide-for-mobile{
+    @include breakpoint-down(medium){
+        display:none;
+    }
+
+}
+
+.hide-for-desktop{
+    @include breakpoint-up(large){
+        display:none;
+    }
+
+}
