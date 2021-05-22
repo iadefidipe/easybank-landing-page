@@ -35,6 +35,11 @@ select {
   font: inherit;
 }
 
+a, a:hover, a:active{
+    text-decoration: none;
+    color: $clr-grayishBlue;
+}
+
 
 img{
     width: 100%;
@@ -51,8 +56,86 @@ img{
 }
 
 .hide-for-desktop{
+
     @include breakpoint-up(large){
         display:none;
     }
 
+}
+
+.page-container{
+    margin: 0 auto;
+    padding: 0 rem(50);
+}
+
+.header{
+
+    display: flex;
+    justify-content: space-between;
+    padding: rem(20) 0;
+
+    .logo{
+        flex: 1;
+        img{
+            width:rem(141);
+            height: rem(22);
+        }
+    }
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex: 2;
+    }
+
+    &__menu{
+        
+        >span{
+            display: block;
+            width:26px;
+            height: 2px;
+            background: $clr-darkBlue;
+
+            &:not(:last-child){
+                margin-bottom: rem(5);
+            }
+        }
+    }
+
+    &__link{        
+
+        a{
+            position: relative;
+            font-size: $font-sm;
+            font-weight: 400;
+            animation: color 300ms ease-in-out;
+
+            &:not(:last-child){
+                margin-right: rem(20);
+            }
+
+            &::before{
+                position: absolute;
+                content: "";
+                display: block;
+                background: linear-gradient(to right, $clr-limeGreen, $clr-brightCyan);
+                
+                left: 0;
+                right: 0;
+                height: rem(5);
+                margin-top: rem(25);
+                opacity: 0;
+
+            }
+            &:hover{
+                color: $clr-darkBlue;
+
+                &::before{
+                    opacity: 1;
+                }
+            }
+        }
+        
+    }
 }
