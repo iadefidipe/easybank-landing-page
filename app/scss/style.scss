@@ -82,10 +82,47 @@ button,.button{
     display: flex;
     justify-content: space-between;
     padding: rem(20) 0;
+    background: white;
 
-    // Class to be added via the DOM when I click the hamburger menu
+    // hamburger open Class to be added via the DOM when I click the hamburger menu
 
     &.open{
+
+        //adds fade-in animation to the overlay once the hambuger menu is clicked and the overlay appears
+        .overlay{
+            display: block;
+            animation: fade-in 300ms ease-in-out forwards;
+        }
+
+        // dropdown options
+        .drop-down{
+            height: 16rem;
+            width: 20rem;
+            background: white;
+            position: fixed;
+            left: auto;
+            right: auto;
+            top: rem(100);
+            display: flex;
+            flex-direction: column;
+            gap: rem(20);
+
+            a{
+                font-size: $font-med;
+                font-weight: 400;
+                transition: color 300ms ease-in-out;
+                margin: 0 auto;
+
+                &:first-child{
+                    margin-top: rem(20);
+                }
+
+                &:hover{
+                    color: $clr-darkBlue;
+                }
+                
+            }
+        }
 
         .header__menu{
             
@@ -129,7 +166,7 @@ button,.button{
 
     &__menu{
         
-        >span{ //hamburger
+        >span{ //hamburger menu styling
             display: block;
             width:26px;
             height: 2px;
@@ -179,7 +216,7 @@ button,.button{
         }
         
     }
-
+    
     &__cta{
         &:hover{
             opacity: 0.7;
@@ -187,16 +224,62 @@ button,.button{
         }
     }
 
+    //overlay design that occurs whn the hamburger is clicked
     .overlay{
-        position: fixed;
+        position:absolute;
+        display: none;
         top: 3.9rem;
         right: 0;
         bottom: 0;
         left: 0;
-        background-image: linear-gradient($darkBlue, transparent);
+        background-image: linear-gradient($clr-darkBlue, transparent);
     }
 
+    // fadeout class with fadeout animate that occurs when the hamburge menu closes
+    &.fadeout{
+        .overlay{
+            animation: fade-out 300ms ease-in-out forwards;
+        }
 
+    }
 
-    
+    .drop-down{
+        display: none;
+    }
+
+}
+
+.hero{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 100vw;
+
+    &__text{
+        flex: 1;
+
+    }
+
+    &__illustration{
+        flex: 3;
+        
+        background-image: url(../../images/bg-intro-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: left;
+        
+        margin-top: rem(-100);
+        z-index: -1;
+
+        img{
+            z-index: -2;
+            position: absolute;
+            width: rem(750);
+            height: rem(750);
+            right: 0;
+            top: rem(-30);
+        }
+        
+    }
 }
