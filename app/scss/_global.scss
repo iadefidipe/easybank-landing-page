@@ -43,6 +43,12 @@ h1{
     text-align: center;
     color: $clr-darkBlue;
     line-height: 1.3;
+
+    @include breakpoint-up(large){
+        font-size: rem(56);
+        text-align: left;
+    }
+    
 }
 
 p{

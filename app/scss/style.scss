@@ -19,6 +19,10 @@
     padding: rem(20) rem(30) ;
     background: white;
 
+    @include breakpoint-up(medium){
+            padding: rem(20) rem(50);
+    }
+
     // hamburger open Class to be added via the DOM when I click the hamburger menu
 
     &.open{
@@ -111,7 +115,7 @@
         align-items: center;
         flex: 2;
 
-        @include breakpoint-down(medium){
+        @include breakpoint-down(large){
             flex: 1;
         }
     }
@@ -170,9 +174,14 @@
     }
     
     &__cta{
+
         &:hover{
             opacity: 0.7;
             transition: opacity 300ms ease-in-out;
+        }
+
+        @include breakpoint-up(medium){
+            margin-right: rem(80);
         }
     }
 
@@ -202,11 +211,18 @@
 }
 
 .hero{
-    
     width: 100vw;
+
+    @include breakpoint-up(large){
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
     
 
     &__text{
+        flex: 1;
         margin-top: rem(50);
         text-align: center;
         display: flex;
@@ -215,12 +231,19 @@
         align-items: center;
         padding: 0 rem(30);
 
+        @include breakpoint-up(large){
+            text-align: left;
+            align-items: flex-start;
+            padding: 0 0 0 rem(50);
+        }
+
         // >p{
         //     width: 70%;
         // }
     }
 
     &__illustration{
+        flex: 2;
         position: relative;
         height: rem(280);
         background-image: url(../../images/bg-intro-mobile.svg);
@@ -240,12 +263,30 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center rem(-170);
+            
             left: 0;
             top: 0;
             right: 0;
             bottom: 0;
             z-index: -1;
 
+            @include breakpoint-up(large){
+                height: rem(700);
+                background-position: center bottom;
+                background-size: rem(800) auto;
+                z-index: 10;
+                background-position: rem(190) rem(-120);
+                
+            }
+
+
+        }
+
+        @include breakpoint-up(large){
+            background-image: url(../../images/bg-intro-desktop.svg);
+            height: rem(700);
+            background-size: cover; 
+            background-position: top  bottom;
         }
 
         // img{
