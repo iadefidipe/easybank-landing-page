@@ -18,3 +18,7 @@ btnHamburger.addEventListener('click', function(){
     }
 
 })
+
+overlay.addEventListener('click', function(){
+    header.classList.toggle('open');
+})

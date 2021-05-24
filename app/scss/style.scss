@@ -1,87 +1,22 @@
 @import "variables";
 @import "mixins";
+@import "global";
 
 
-html{
-    font-size: 100%;
-    box-sizing: border-box;
-}
-
-*, *::before, *::after{
-    margin:0 ;
-    padding: 0;
-    box-sizing: inherit;
-}
-
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
-/* Set core body defaults */
-body {
-    font-family: 'Rubik', sans-serif;
-    min-height: 100vh;
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
-    margin:  0 auto;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-a, a:hover, a:active{
-    text-decoration: none;
-    color: $clr-grayishBlue;
-}
 
 
-img{
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-//button styling
-
-button,.button{
-    padding:  0.875rem 2.1875rem;
-    border-radius: 50px;
-    cursor: pointer;
-    background: linear-gradient(to right, $clr-limeGreen, $clr-brightCyan);
-    border: 0;
-    color: $clr-white;
-    font-weight: 400;
-}
-
-//visibility
-.hide-for-mobile{ //hide elements in mobile view
-    @include breakpoint-down(medium){
-        display:none;
-    }
-}
-
-.hide-for-desktop{ //hide elements in desktopview
-    @include breakpoint-up(large){
-        display:none;
-    }
-}
 
 .page-container{
     margin: 0 auto;
-    padding: 0 rem(50);
+    // padding: 0 rem(50);
 }
 
 .header{
 
     display: flex;
     justify-content: space-between;
-    padding: rem(20) 0;
+    align-items: center;
+    padding: rem(20) rem(30) ;
     background: white;
 
     // hamburger open Class to be added via the DOM when I click the hamburger menu
@@ -92,20 +27,36 @@ button,.button{
         .overlay{
             display: block;
             animation: fade-in 300ms ease-in-out forwards;
+
+            @media (min-width: 1024px){
+                display: none;
+            }
+
         }
 
         // dropdown options
         .drop-down{
-            height: 16rem;
-            width: 20rem;
+            position: absolute;
+            height:rem(280);
+            // margin: 0 auto;
+            width: rem(400);
             background: white;
-            position: fixed;
-            left: auto;
-            right: auto;
+            left: 50%;
+            
+            transform: translateX(-50%);
             top: rem(100);
             display: flex;
             flex-direction: column;
             gap: rem(20);
+            border-radius: rem(10);
+            
+            @media (max-width: 417px){
+                width: rem(320);
+            }
+
+            @media (min-width: 1024px){
+                display: none;
+            }
 
             a{
                 font-size: $font-med;
@@ -124,6 +75,7 @@ button,.button{
             }
         }
 
+        // Hamburger animation
         .header__menu{
             
             >span:first-child{
@@ -250,36 +202,60 @@ button,.button{
 }
 
 .hero{
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
+    
     width: 100vw;
+    
 
     &__text{
-        flex: 1;
+        margin-top: rem(50);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: rem(20);
+        align-items: center;
+        padding: 0 rem(30);
 
+        // >p{
+        //     width: 70%;
+        // }
     }
 
     &__illustration{
-        flex: 3;
-        
-        background-image: url(../../images/bg-intro-desktop.svg);
+        position: relative;
+        height: rem(280);
+        background-image: url(../../images/bg-intro-mobile.svg);
+        // background: blue;
+        background-size: cover;
         background-repeat: no-repeat;
-        background-position: left;
-        
-        margin-top: rem(-100);
-        z-index: -1;
+        background-position: center  rem(-50);
+        z-index: -2;
 
-        img{
-            z-index: -2;
+        &::before{
+            // display: none;
+            content: "";
             position: absolute;
-            width: rem(750);
-            height: rem(750);
+            background-image: url(../../images/image-mockups.png);
+            // background: red;
+            height: rem(280);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center rem(-170);
+            left: 0;
+            top: 0;
             right: 0;
-            top: rem(-30);
+            bottom: 0;
+            z-index: -1;
+
         }
+
+        // img{
+        //     // z-index: -2;
+        //     // position: absolute;
+        //     // width: rem(750);
+        //     // height: rem(750);
+        //     // right: 0;
+        //     // top: rem(-30);
+        // }
         
     }
 }
