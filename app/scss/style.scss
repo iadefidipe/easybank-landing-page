@@ -21,15 +21,23 @@
     background: $clr-veryLightGray;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     text-align: center;
     gap: rem(20);
+
+    @include breakpoint-up(large){
+        margin-top: 0;
+        padding: rem(50); 
+        gap: rem(100);
+        text-align: left;
+        
+    }
+
+
 
     &__intro{
         display: flex;
         flex-direction: column;
         gap: rem(20);
-
     }
 
     &__service{
@@ -37,12 +45,22 @@
         flex-direction: column;
         gap: rem(20);
 
+        @include breakpoint-up(large){
+            flex-direction: row;
+            
+        }
+
         &-option{
             display: flex;
             justify-content: center;
             flex-direction: column;
             align-items: center;
             gap: rem(20);
+
+            @include breakpoint-up(large){
+                justify-content: space-between;
+                align-items: flex-start;
+            }
 
             >img{
                 width: rem(50);
