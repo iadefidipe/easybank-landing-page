@@ -1,0 +1,198 @@
+.header{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: rem(20) rem(30) ;
+    background: white;
+
+    @include breakpoint-up(medium){
+            padding: rem(20) rem(50);
+    }
+
+    // hamburger open Class to be added via the DOM when I click the hamburger menu
+
+    &.open{
+
+        //adds fade-in animation to the overlay once the hambuger menu is clicked and the overlay appears
+        .overlay{
+            display: block;
+            animation: fade-in 300ms ease-in-out forwards;
+
+            @media (min-width: 1024px){
+                display: none;
+            }
+
+        }
+
+        // dropdown options
+        .drop-down{
+            position: absolute;
+            height:rem(280);
+            // margin: 0 auto;
+            width: rem(400);
+            background: white;
+            left: 50%;
+            
+            transform: translateX(-50%);
+            top: rem(100);
+            display: flex;
+            flex-direction: column;
+            gap: rem(20);
+            border-radius: rem(10);
+            
+            @media (max-width: 417px){
+                width: rem(320);
+            }
+
+            @media (min-width: 1024px){
+                display: none;
+            }
+
+            a{
+                font-size: $font-med;
+                font-weight: 400;
+                transition: color 300ms ease-in-out;
+                margin: 0 auto;
+
+                &:first-child{
+                    margin-top: rem(20);
+                }
+
+                &:hover{
+                    color: $clr-darkBlue;
+                }
+                
+            }
+        }
+
+        // Hamburger animation
+        .header__menu{
+            
+            >span:first-child{
+                transform:rotate(45deg);
+                
+            }
+
+            >span:nth-child(2){
+                opacity: 0;
+            }
+
+            >span:last-child{
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    .logo{
+        flex: 1;
+        img{
+            width:rem(141);
+            height: rem(22);
+        }
+
+        @include breakpoint-down(medium){
+            flex: 18;
+        }
+    }
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex: 2;
+
+        @include breakpoint-down(large){
+            flex: 1;
+        }
+    }
+
+    &__menu{
+        
+        >span{ //hamburger menu styling
+            display: block;
+            width:26px;
+            height: 2px;
+            background: $clr-darkBlue;
+            transition: all 300ms ease-in-out;
+            transform-origin: 3px 1px;
+
+            &:not(:last-child){
+                margin-bottom: rem(5);
+            }
+        }
+    }
+
+    &__link{        
+
+        a{
+            position: relative;
+            font-size: $font-sm;
+            font-weight: 400;
+            transition: color 300ms ease-in-out;
+
+            &:not(:last-child){
+                margin-right: rem(20);
+            }
+
+            // styling for little tab that appears when you hvaer the tab links 
+            &::before{
+                position: absolute;
+                content: "";
+                display: block;
+                background: linear-gradient(to right, $clr-limeGreen, $clr-brightCyan);             
+                left: 0;
+                right: 0;
+                height: rem(5);
+                margin-top: rem(25);
+                opacity: 0;
+                transition: opacity 300ms ease-in-out;
+
+            }
+            &:hover{
+                color: $clr-darkBlue;
+
+                &::before{
+                    opacity: 1;
+                }
+            }
+        }
+        
+    }
+    
+    &__cta{
+
+        &:hover{
+            opacity: 0.7;
+            transition: opacity 300ms ease-in-out;
+        }
+
+        @include breakpoint-up(medium){
+            margin-right: rem(80);
+        }
+    }
+
+    //overlay design that occurs whn the hamburger is clicked
+    .overlay{
+        position:absolute;
+        display: none;
+        top: 3.9rem;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient($clr-darkBlue, transparent);
+    }
+
+    // fadeout class with fadeout animate that occurs when the hamburge menu closes
+    &.fadeout{
+        .overlay{
+            animation: fade-out 300ms ease-in-out forwards;
+        }
+
+    }
+
+    .drop-down{
+        display: none;
+    }
+
+}

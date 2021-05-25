@@ -1,0 +1,76 @@
+// hero styling
+
+.hero{
+    width: 100vw;
+
+    @include breakpoint-up(large){
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+    
+
+    &__text{
+        flex: 1;
+        margin-top: rem(50);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: rem(20);
+        align-items: center;
+        padding: 0 rem(30);
+
+        @include breakpoint-up(large){
+            text-align: left;
+            align-items: flex-start;
+            padding: 0 0 0 rem(50);
+        }
+    }
+
+    &__illustration{
+        flex: 2;
+        position: relative;
+        height: rem(280);
+        background-image: url(../../images/bg-intro-mobile.svg);
+        
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center  rem(-50);
+        z-index: -2;
+
+        &::before{
+            content: "";
+            position: absolute;
+            background-image: url(../../images/image-mockups.png);
+            height: rem(280);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center rem(-170);
+            
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+
+            @include breakpoint-up(large){
+                height: rem(700);
+                background-position: center bottom;
+                background-size: rem(800) auto;
+                z-index: 10;
+                background-position: rem(190) rem(-120);
+            }
+
+
+        }
+
+        @include breakpoint-up(large){
+            background-image: url(../../images/bg-intro-desktop.svg);
+            height: rem(700);
+            background-size: cover; 
+            background-position: top  bottom;
+        }
+        
+    }
+}
