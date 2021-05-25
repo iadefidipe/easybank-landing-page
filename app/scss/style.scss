@@ -69,3 +69,53 @@
         }
     }
 }
+
+
+.article{
+    background:  $clr-veryLightGray;
+    padding: rem(100)  rem(30);
+
+    h2{
+        margin-bottom: rem(30);
+    }
+
+    .card-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: rem(30);
+    }
+
+    &__card{
+        max-width: rem(380);
+        background: $clr-white;
+        border-radius: rem(8);
+
+        img{
+            width: 100%;
+            border-radius: rem(8) rem(8) 0 0;
+        }
+
+        &-text{
+            padding:  rem(30);
+            display: grid;
+            gap: rem(10);
+            
+
+            >span{
+                display: block;
+                font-size: rem(12);
+                color: $clr-grayishBlue;
+                font-weight: 700;
+            }
+
+            >p{
+                font-size: rem(14);
+            }
+
+        }
+        
+
+
+    }
+}
