@@ -72,8 +72,17 @@
 
 
 .article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background:  $clr-veryLightGray;
     padding: rem(100)  rem(30);
+
+    @include breakpoint-up(large){
+        align-items: flex-start;
+            
+    }
 
     h2{
         margin-bottom: rem(30);
@@ -83,13 +92,21 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         gap: rem(30);
+
+        @include breakpoint-up(large){
+            flex-direction: row;
+            justify-content: space-around;
+            
+        }
     }
 
     &__card{
-        max-width: rem(380);
+        max-width: 100%;
         background: $clr-white;
         border-radius: rem(8);
+        min-height: rem(450);
 
         img{
             width: 100%;
@@ -112,10 +129,6 @@
             >p{
                 font-size: rem(14);
             }
-
         }
-        
-
-
     }
 }
