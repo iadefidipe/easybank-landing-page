@@ -120,8 +120,10 @@ button, .button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1.25rem 1.875rem;
+  padding: 3.125rem 1.875rem;
   background: white;
+  position: relative;
+  z-index: 1000;
 }
 
 @media (min-width: 40em) {
@@ -302,12 +304,6 @@ button, .button {
   transition: opacity 300ms ease-in-out;
 }
 
-@media (min-width: 40em) {
-  .header__cta {
-    margin-right: 5rem;
-  }
-}
-
 .header .overlay {
   position: absolute;
   display: none;
@@ -347,6 +343,8 @@ button, .button {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    position: relative;
+    z-index: 0;
   }
 }
 
@@ -397,10 +395,10 @@ button, .button {
   content: "";
   position: absolute;
   background-image: url(../../images/image-mockups.png);
-  height: 17.5rem;
-  background-size: cover;
+  width: 100%;
+  background-size: 94%;
   background-repeat: no-repeat;
-  background-position: center -10.625rem;
+  background-position: center bottom;
   left: 0;
   top: 0;
   right: 0;
@@ -410,11 +408,7 @@ button, .button {
 
 @media (min-width: 64em) {
   .hero__illustration::before {
-    height: 43.75rem;
-    background-position: center bottom;
-    background-size: 50rem auto;
-    z-index: 1;
-    background-position: 11.875rem -7.5rem;
+    display: none;
   }
 }
 
@@ -424,6 +418,26 @@ button, .button {
     height: 43.75rem;
     background-size: cover;
     background-position: top  bottom;
+    position: relative;
+    z-index: 0;
+  }
+}
+
+.hero__image {
+  display: none;
+}
+
+@media (min-width: 64em) {
+  .hero__image {
+    height: 700px;
+    display: block;
+  }
+  .hero__image img {
+    position: relative;
+    margin-right: -60rem;
+    z-index: 1;
+    -webkit-transform: translateX(15.5rem) translateY(-8rem);
+            transform: translateX(15.5rem) translateY(-8rem);
   }
 }
 
@@ -534,7 +548,7 @@ button, .button {
       -ms-flex-align: center;
           align-items: center;
   background: #fafafa;
-  padding: 6.25rem 1.875rem;
+  padding: 6.25rem 3.125rem;
 }
 
 @media (min-width: 64em) {

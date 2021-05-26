@@ -3,11 +3,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: rem(20) rem(30) ;
+    padding: rem(50) rem(30) ;
     background: white;
+    position: relative;
+    z-index: 1000;
 
     @include breakpoint-up(medium){
-            padding: rem(20) rem(50);
+        padding: rem(20) rem(50);
     }
 
     // hamburger open Class to be added via the DOM when I click the hamburger menu
@@ -168,9 +170,9 @@
             transition: opacity 300ms ease-in-out;
         }
 
-        @include breakpoint-up(medium){
-            margin-right: rem(80);
-        }
+        // @include breakpoint-up(medium){
+        //     margin-right: rem(80);
+        // }
     }
 
     //overlay design that occurs whn the hamburger is clicked
