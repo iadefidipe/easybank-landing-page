@@ -110,6 +110,10 @@ button, .button {
   }
 }
 
+.page-container {
+  margin: 0 auto;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -439,10 +443,6 @@ button, .button {
     -webkit-transform: translateX(15.5rem) translateY(-8rem);
             transform: translateX(15.5rem) translateY(-8rem);
   }
-}
-
-.page-container {
-  margin: 0 auto;
 }
 
 .services {
