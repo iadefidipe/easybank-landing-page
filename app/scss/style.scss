@@ -14,7 +14,7 @@
 }
 
 
-
+// 
 .services{
     margin-top: rem(100);
     padding: rem(30);
@@ -71,6 +71,8 @@
 }
 
 
+// latest article styling
+
 .article{
     display: flex;
     flex-direction: column;
@@ -81,7 +83,6 @@
 
     @include breakpoint-up(large){
         align-items: flex-start;
-            
     }
 
     h2{
@@ -98,7 +99,6 @@
         @include breakpoint-up(large){
             flex-direction: row;
             justify-content: space-around;
-            
         }
     }
 
@@ -129,6 +129,104 @@
             >p{
                 font-size: rem(14);
             }
+        }
+    }
+}
+
+
+.footer{
+    background: $clr-darkBlue;
+    padding: rem(50);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(30);
+
+    @include breakpoint-up(large){
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &-section{
+        display: grid;
+        gap: rem(30);
+
+        @include breakpoint-up(large){
+            &:first-of-type{
+                gap: rem(50);
+            }
+        }
+    }
+
+    &__logo{
+
+        margin: 0 auto;
+        @include breakpoint-up(large){
+            margin: 0;
+        }
+    }
+
+    &__sm{
+        display: flex;
+        gap: rem(20);
+        align-items: center;
+
+        a>img{
+            &:hover{
+                color: $clr-limeGreen;
+            }
+        }
+    }
+
+    &__links{
+        display: flex;
+        flex-direction: column;
+        gap: rem(20);
+
+        @include breakpoint-up(large){
+            flex-direction: row;
+            gap: rem(50);
+        }
+
+        .link-right, .link-left{
+            display: flex;
+            flex-direction:column ;
+            gap: rem(20);
+            text-align: center;
+
+            @include breakpoint-up(large){
+                text-align: left;
+            }
+
+            a{
+                color: white;
+
+                &:hover{
+                    color: $clr-limeGreen;
+                }
+            }
+
+        }
+
+        
+    }
+
+    &__cta{
+        display:flex;
+        flex-direction: column;
+        gap: rem(20);
+        align-items: center;
+
+        .button{
+            &:hover{
+                opacity: 0.8;
+                transition: opacity 300ms ease-in-out;
+            }
+        }
+
+        @include breakpoint-up(large){
+            align-items: flex-start;
         }
     }
 }
