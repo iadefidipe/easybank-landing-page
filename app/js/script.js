@@ -48,3 +48,14 @@ sections.forEach( function(section){
 });
 
 // sticky nav
+
+const stickyNav = function(entries, observer){
+    const [entry] = entries;
+
+    if (entry.isIntersecting) console.log(entry);
+
+}
+
+const headerObserver = new IntersectionObserver (stickyNav, options)
+
+headerObserver.observe(header)

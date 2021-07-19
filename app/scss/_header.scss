@@ -5,8 +5,8 @@
     align-items: center;
     padding: rem(50) rem(30) ;
     background: white;
-    
-    z-index: 1000;
+    position: relative;
+    z-index: 100000;
 
     @include breakpoint-up(medium){
         padding: rem(20) rem(50);
@@ -180,9 +180,10 @@
     .overlay{
         position:absolute;
         display: none;
-        top: 6.2rem;
+        top: 7rem;
         right: 0;
-        bottom: 0;
+
+        height: 100vh;
         left: 0;
         background-image: linear-gradient($clr-darkBlue, transparent);
     }
