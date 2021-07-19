@@ -112,6 +112,12 @@ button,.button{
     }
 }
 
+.hide-for-tablet{
+    @include breakpoint-down(small){
+        display: none;
+    }
+}
+
 // page container
 .page-container{
     margin: 0 auto;
@@ -133,21 +139,21 @@ button,.button{
 
 // jump to top btn styling
 .btnJump{
-    height: 100px;
-    width: 100px;
-    background-color: red;
-    position:fixed;
+    height: 50px;
+    width: 50px;
+    display:grid;
+    place-items: center;
+    border-radius: rem(100);
+    position: fixed;
+    top: 80vh;
+    right: rem(20);
+    background-color: $clr-limeGreen;
+
+    
+    i{
+        color: white;
+    }
+    
+    
 }
 
-//overlay design that occurs whn the hamburger is clicked
-    .overlay{
-        position:absolute;
-        display: none;
-        top: 6.2rem;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-image: linear-gradient($clr-darkBlue, transparent);
-            animation: fade-out 300ms ease-in-out forwards;
-
-    }

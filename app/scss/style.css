@@ -110,6 +110,12 @@ button, .button {
   }
 }
 
+@media (max-width: 39.9375em) {
+  .hide-for-tablet {
+    display: none;
+  }
+}
+
 .page-container {
   margin: 0 auto;
 }
@@ -130,23 +136,20 @@ button, .button {
 }
 
 .btnJump {
-  height: 100px;
-  width: 100px;
-  background-color: red;
+  height: 50px;
+  width: 50px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  border-radius: 6.25rem;
   position: fixed;
+  top: 80vh;
+  right: 1.25rem;
+  background-color: #31d35c;
 }
 
-.overlay {
-  position: absolute;
-  display: none;
-  top: 6.2rem;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#2d314d), to(transparent));
-  background-image: linear-gradient(#2d314d, transparent);
-  -webkit-animation: fade-out 300ms ease-in-out forwards;
-          animation: fade-out 300ms ease-in-out forwards;
+.btnJump i {
+  color: white;
 }
 
 .header {

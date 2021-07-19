@@ -3,7 +3,8 @@
 const btnHamburger = document.querySelector('#btnHamburger');
 const header = document.querySelector('.header');
 const overlay = document.querySelector('.overlay');
-const sections = document.querySelectorAll('.section')
+const sections = document.querySelectorAll('.section');
+const btnJump = document.querySelector('.btnJump');
 
 // litens for clich on the hamburger menu
 btnHamburger.addEventListener('click', function(){
@@ -47,15 +48,33 @@ sections.forEach( function(section){
     sectionObserver.observe(section)
 });
 
-// sticky nav
+// sticky nav (used jump button instead)
 
-const stickyNav = function(entries, observer){
-    const [entry] = entries;
+// const headerHeight = header.getBoundingClientRect().height;
 
-    if (entry.isIntersecting) console.log(entry);
+// const stickyNav = function(entries, observer){
+//     const [entry] = entries;
 
-}
+//      console.log(entry)
 
-const headerObserver = new IntersectionObserver (stickyNav, options)
+//     // if (entry.isIntersecting) console.log(entry);
 
-headerObserver.observe(header)
+// }
+
+// const headerObserver = new IntersectionObserver(stickyNav, {
+//   root: null,
+//   threshold: 0,
+//   rootMargin: `${headerHeight1}px`,
+// });
+
+// headerObserver.observe(header);\
+
+//  btnjump funtionality
+
+btnJump.addEventListener('click', function(){
+
+    header.scrollIntoView({behaviour:'smooth'})
+})
+
+
+
