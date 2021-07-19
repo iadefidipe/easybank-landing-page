@@ -116,3 +116,17 @@ button,.button{
 .page-container{
     margin: 0 auto;
 }
+
+//section style
+
+.section{
+    transition: opacity 500ms, transform 500ms;
+    background: blue;
+
+
+    &--hidden{
+        opacity: 0;
+        transform: translateY(8rem);
+        background: red;
+    }
+}

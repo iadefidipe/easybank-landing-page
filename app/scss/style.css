@@ -114,6 +114,21 @@ button, .button {
   margin: 0 auto;
 }
 
+.section {
+  -webkit-transition: opacity 500ms, -webkit-transform 500ms;
+  transition: opacity 500ms, -webkit-transform 500ms;
+  transition: opacity 500ms, transform 500ms;
+  transition: opacity 500ms, transform 500ms, -webkit-transform 500ms;
+  background: blue;
+}
+
+.section--hidden {
+  opacity: 0;
+  -webkit-transform: translateY(8rem);
+          transform: translateY(8rem);
+  background: red;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
