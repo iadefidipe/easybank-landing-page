@@ -25,7 +25,7 @@ overlay.addEventListener('click', function(){
 })
 
 
-// intersection observer
+// revael section intersection observer
 
 const revealSection = function(entries,observer){
 
@@ -46,3 +46,5 @@ const sectionObserver = new IntersectionObserver (revealSection, options);
 sections.forEach( function(section){
     sectionObserver.observe(section)
 });
+
+// sticky nav

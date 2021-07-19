@@ -5,7 +5,7 @@
     align-items: center;
     padding: rem(50) rem(30) ;
     background: white;
-    position: relative;
+    
     z-index: 1000;
 
     @include breakpoint-up(medium){
@@ -19,6 +19,7 @@
         //adds fade-in animation to the overlay once the hambuger menu is clicked and the overlay appears
         .overlay{
             display: block;
+            position: absolute !important;
             animation: fade-in 300ms ease-in-out forwards;
 
             @media (min-width: 1024px){
@@ -37,7 +38,7 @@
             left: 50%;
             
             transform: translateX(-50%);
-            top: rem(100);
+            top: rem(150);
             display: flex;
             flex-direction: column;
             gap: rem(20);
@@ -179,7 +180,7 @@
     .overlay{
         position:absolute;
         display: none;
-        top: 3.9rem;
+        top: 6.2rem;
         right: 0;
         bottom: 0;
         left: 0;

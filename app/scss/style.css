@@ -141,7 +141,6 @@ button, .button {
           align-items: center;
   padding: 3.125rem 1.875rem;
   background: white;
-  position: relative;
   z-index: 1000;
 }
 
@@ -153,6 +152,7 @@ button, .button {
 
 .header.open .overlay {
   display: block;
+  position: absolute !important;
   -webkit-animation: fade-in 300ms ease-in-out forwards;
           animation: fade-in 300ms ease-in-out forwards;
 }
@@ -171,7 +171,7 @@ button, .button {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  top: 6.25rem;
+  top: 9.375rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -326,7 +326,7 @@ button, .button {
 .header .overlay {
   position: absolute;
   display: none;
-  top: 3.9rem;
+  top: 6.2rem;
   right: 0;
   bottom: 0;
   left: 0;
