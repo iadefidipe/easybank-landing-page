@@ -138,8 +138,7 @@ button, .button {
 .btnJump {
   height: 50px;
   width: 50px;
-  display: -ms-grid;
-  display: grid;
+  display: none;
   place-items: center;
   border-radius: 6.25rem;
   position: fixed;

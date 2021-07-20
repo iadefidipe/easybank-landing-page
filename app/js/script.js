@@ -5,6 +5,7 @@ const header = document.querySelector('.header');
 const overlay = document.querySelector('.overlay');
 const sections = document.querySelectorAll('.section');
 const btnJump = document.querySelector('.btnJump');
+const hero = document.querySelector('.hero')
 
 // litens for clich on the hamburger menu
 btnHamburger.addEventListener('click', function(){
@@ -32,9 +33,16 @@ const revealSection = function(entries,observer){
 
     const [entry] = entries;
 
-    if (!entry.isIntersecting)  return;
-    entry.target.classList.toggle('section--hidden');
-    observer.unobserve(entry.target);
+    if (!entry.isIntersecting) {
+      btnJump.style.display = "none";
+      return;
+    } 
+
+    else{
+        entry.target.classList.remove('section--hidden');
+        btnJump.style.display = "grid";
+
+    }
 }
 
 const options = {
@@ -48,26 +56,7 @@ sections.forEach( function(section){
     sectionObserver.observe(section)
 });
 
-// sticky nav (used jump button instead)
 
-// const headerHeight = header.getBoundingClientRect().height;
-
-// const stickyNav = function(entries, observer){
-//     const [entry] = entries;
-
-//      console.log(entry)
-
-//     // if (entry.isIntersecting) console.log(entry);
-
-// }
-
-// const headerObserver = new IntersectionObserver(stickyNav, {
-//   root: null,
-//   threshold: 0,
-//   rootMargin: `${headerHeight1}px`,
-// });
-
-// headerObserver.observe(header);\
 
 //  btnjump funtionality
 
@@ -75,6 +64,8 @@ btnJump.addEventListener('click', function(){
 
     header.scrollIntoView({behaviour:'smooth'})
 })
+
+
 
 
 
